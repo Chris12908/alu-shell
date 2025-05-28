@@ -1,7 +1,2 @@
 #!/bin/bash
-find . -type d > dir_list.txt
-while read dir
-do
-  chmod 755 "$dir"
-done < dir_list.txt
-rm dir_list.txt
+find . -type d -exec chmod 755 {} +
