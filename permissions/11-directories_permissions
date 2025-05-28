@@ -1,2 +1,7 @@
 #!/bin/bash
-find . -type d > dirs_list.txt
+find . -type d > dir_list.txt
+while read dir
+do
+  chmod 755 "$dir"
+done < dir_list.txt
+rm dir_list.txt
