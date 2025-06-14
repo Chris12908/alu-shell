@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Lists current directory files with names trimmed after the first dash
+
+for file in *  # this skips hidden files automatically
+do
+  # Check if the file contains a dash
+  if [[ "$file" == *-* ]]; then
+    # Cut everything after the first dash
+    echo "${file#*-}"
+  else
+    # If no dash, just print the file name
+    echo "$file"
+  fi
+done
+
