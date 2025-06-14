@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Extract IP and HTTP code from Apache log, group and sort without awk
+
+grep -oE '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+ [0-9]{3}' apache-access.log \
+  | sort | uniq -c | sort -nr
+
+
